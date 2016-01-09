@@ -195,17 +195,29 @@ g:deoplete#sources		*g:deoplete#sources*
 b:deoplete_sources		*b:deoplete_sources*
 		Buffer local variable of |g:deoplete#sources|.
 >
-		" Examples:
+		" Example:
 		" In cmdwin, only use buffer source.
 		autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
 <
 g:deoplete#ignore_sources	*g:deoplete#ignore_sources*
 		It is a dictionary to decide ignore source names.
-		Default value: {}
+		Follows the same signature as |g:deoplete#sources|:
 
+		Default value: {}
+>
+		" Examples
+		let g:deoplete#ignore_sources = {}
+		let g:deoplete#ignore_sources._ = ['buffer']
+		let g:deoplete#ignore_sources.cpp = ['buffer', 'tag']
+<
 b:deoplete_ignore_sources	*b:deoplete_ignore_sources*
 		Buffer local variable of |g:deoplete#ignore_sources|.
-
+		Follows the same signature as |b:deoplete_sources|.
+>
+		" Example:
+		" In cmdwin, only use buffer source.
+		autocmd CmdwinEnter * let b:deoplete_ignore_sources = ['buffer']
+<
 				*g:deoplete#member#prefix_patterns*
 g:deoplete#member#prefix_patterns
 		This dictionary records prefix patterns to member completion.
